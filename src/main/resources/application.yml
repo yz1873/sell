@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Zy890924@
+    url: jdbc:mysql://rm-uf6ee3334gs8bk4f5o.mysql.rds.aliyuncs.com/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
