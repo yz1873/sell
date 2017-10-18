@@ -1,11 +1,16 @@
 package com.imooc.dao;
 
 import com.imooc.dataobject.ProductCategory;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -20,10 +25,8 @@ public class ProductCategoryRepositoryTest {
 
     @Test
     public void test1() {
-        ProductCategory productCategory = new ProductCategory();
-        productCategory.setCategoryName("qwe");
-        productCategory.setCategoryType(2);
-
-        repository.save(productCategory);
+        List<Integer> list = Arrays.asList(1, 2, 3, 4);
+        List<ProductCategory> result = repository.findByCategoryTypeIn(list);
+        Assert.assertNotEquals(0,result.size());
     }
 }
